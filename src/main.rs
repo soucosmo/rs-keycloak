@@ -1,6 +1,6 @@
-use keycloak::KeycloakOpenID;
+use client::KeycloakOpenID;
 
-mod keycloak;
+mod client;
 fn main() {
     let keycloak_openid = KeycloakOpenID::new(
         
