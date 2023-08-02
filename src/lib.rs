@@ -1,4 +1,5 @@
-mod core;
+mod client;
+mod types;
 
 #[cfg(test)]
 mod tests {
