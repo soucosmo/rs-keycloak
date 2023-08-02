@@ -1,7 +1,7 @@
 use serde::Deserialize;
 use uuid::Uuid;
 
-#[derive(Deserialize)]
+#[derive(Deserialize, Debug)]
 pub struct TokenPassword {
     pub access_token: String,
     pub expires_in: u64,
