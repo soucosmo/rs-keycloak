@@ -1,7 +1,13 @@
 [package]
-name = "keycloak"
+name = "rs-keycloak"
 version = "0.1.0"
 edition = "2021"
+
+authors = ["Cosmo André"]
+description = "Inclui ajudantes para facilitar o desenvolvimento usando async-graphql"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/cosmo9able/rs-keycloak"
+keywords = ["async-graphql", "auth", "login", "keycloak"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
