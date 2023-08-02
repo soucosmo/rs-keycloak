@@ -1,6 +1,5 @@
 use super::urls::OPENID_URL;
 use minreq::{post, Error};
-use serde_json::Value;
 use crate::types::Token;
 
 #[derive(Debug)]
@@ -58,7 +57,6 @@ impl OpenID {
                 }
 
                 let token = Token::Introspect(e.clone().json().unwrap());
-
 
                 let realm_roles = Self::get_realm_roles(&token);
 
