@@ -1,10 +1,10 @@
 [package]
 name = "rs-keycloak"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 
 authors = ["Cosmo André"]
-description = "Inclui ajudantes para facilitar o desenvolvimento usando async-graphql"
+description = "Faça a autenticação dos seus projetos usando Keycloak"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/cosmo9able/rs-keycloak"
 keywords = ["async-graphql", "auth", "login", "keycloak"]
