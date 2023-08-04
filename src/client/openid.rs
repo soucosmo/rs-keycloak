@@ -15,16 +15,19 @@ impl OpenID {
     fn get_realm_roles(token: &Token) -> Vec<String>{
         match token {
             Token::Introspect(e) => {
-                let token_roles = e.get("realm_access")
-                    .unwrap()
-                    .get("roles")
-                    .unwrap()
-                    .as_array()
-                    .unwrap();
+                match e.get("realm_access") {
+                    Some(ee) => {
+                        let token_roles = ee.get("roles")
+                        .unwrap()
+                        .as_array()
+                        .unwrap();
 
-                token_roles.iter()
-                    .map(|i| i.to_string().trim_matches('\"').to_string())
-                    .collect::<Vec<String>>()
+                        token_roles.iter()
+                        .map(|i| i.to_string().trim_matches('\"').to_string())
+                        .collect::<Vec<String>>()
+                    },
+                    None => vec![],
+                }
             },
             _ => vec![]
         }
