@@ -1,3 +1,4 @@
+use serde_json::{Value, json};
 use super::urls::OPENID_URL;
 use minreq::{post, Error};
 use crate::types::Token;
@@ -229,5 +230,12 @@ impl OpenID {
         }
 
         roles_count == roles_found
+    }
+
+    pub fn get_decoded_token(&self) -> Value {
+        match &self.token {
+            Token::Introspect(e) => e.clone(),
+            _ => json!({}),
+        }
     }
 }
