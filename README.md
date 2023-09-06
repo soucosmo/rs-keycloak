@@ -50,6 +50,34 @@ fn main() {
 }
 ```
 
+## Fazendo logout com usuário e senha
+```rust
+use client::OpenID;
+
+fn main() {
+    let server_url = "https://seuhost.com.br";
+    let client_id = "client";
+    let realm_name = "realm";
+    let client_secret = "client_secret";
+    let refresh_token = "refresh token";
+
+    let open_id = OpenID::logout(
+        refresh_token,
+        server_url,
+        realm_name,
+        client_id,
+        client_secret
+    );
+
+    if open_id.is_ok() {
+        println!("Logout bem sucedido");
+    } else {
+        println!("Erro ao deslogar");
+    }
+
+}
+```
+
 ## Fazendo o introspect do token e validando roles
 ```rust
 use client::OpenID;
