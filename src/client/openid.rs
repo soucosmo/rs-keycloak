@@ -156,6 +156,38 @@ impl OpenID {
         }
     }
 
+    pub fn logout(refresh_token: &str,server_url: &str, realm_name: &str, client_id: &str, client_secret: &str) -> Result<(), Error> {
+        let path = OPENID_URL.logout.replace("{realm-name}", realm_name);
+
+        let url = format!(
+            "{}/{}",
+            server_url,
+            path,
+        );
+
+        let res = post(url)
+            .with_header("Content-Type", "application/x-www-form-urlencoded")
+            .with_body(
+                format!(
+                    "client_id={}&client_secret={}&refresh_token={}",
+                    client_id,
+                    client_secret,
+                    refresh_token,
+                )
+            ).send();
+
+        match res {
+            Ok(e) => {
+                if e.status_code != 200 {
+                    return Err(Error::Other("Unauthorized"));
+                }
+
+                Ok(())
+            },
+            Err(e) => Err(e),
+        }
+    }
+
     pub fn get_token_type(&self) -> String {
         match &self.token {
             Token::Client(token) => token.token_type.to_string(),
