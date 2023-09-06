@@ -97,7 +97,7 @@ impl OpenID {
 
         match res {
             Ok(e) => {
-                if e.status_code != 204 {
+                if e.status_code != 200 {
                     return Err(Error::Other("Unauthorized"));
                 }
 
@@ -178,7 +178,7 @@ impl OpenID {
 
         match res {
             Ok(e) => {
-                if e.status_code != 200 {
+                if e.status_code != 204 {
                     return Err(Error::Other("Unauthorized"));
                 }
 
