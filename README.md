@@ -74,7 +74,6 @@ fn main() {
     } else {
         println!("Erro ao deslogar");
     }
-
 }
 ```
 
