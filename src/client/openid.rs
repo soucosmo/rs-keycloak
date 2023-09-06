@@ -156,7 +156,7 @@ impl OpenID {
         }
     }
 
-    pub fn logout(refresh_token: &str,server_url: &str, realm_name: &str, client_id: &str, client_secret: &str) -> Result<(), Error> {
+    pub fn logout(server_url: &str, realm_name: &str, client_id: &str, client_secret: &str, refresh_token: &str) -> Result<(), Error> {
         let path = OPENID_URL.logout.replace("{realm-name}", realm_name);
 
         let url = format!(

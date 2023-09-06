@@ -50,7 +50,7 @@ fn main() {
 }
 ```
 
-## Fazendo logout com usuário e senha
+## Fazendo logout com refresh_token
 ```rust
 use client::OpenID;
 
@@ -62,11 +62,11 @@ fn main() {
     let refresh_token = "refresh token";
 
     let open_id = OpenID::logout(
-        refresh_token,
         server_url,
         realm_name,
         client_id,
         client_secret
+        refresh_token,
     );
 
     if open_id.is_ok() {
