@@ -15,4 +15,3 @@ keywords = ["auth", "login", "keycloak", "rest", "graphql"]
 minreq = { version = "2.8.1", features = ["punycode", "json-using-serde", "https-native"] }
 serde = { version = "1.0.163", features = ["derive"] }
 serde_json = { default-features = false, version = "1.0.96" }
-uuid = { version = "1.4.1", features = ["serde"] }
