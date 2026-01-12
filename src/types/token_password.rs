@@ -11,6 +11,6 @@ pub struct TokenPassword {
     pub id_token: String,
     #[serde(rename = "not-before-policy")]
     pub not_before_policy: i32,
-    pub session_state: Uuid, 
+    pub session_state: String, 
     pub scope: String,
 }
